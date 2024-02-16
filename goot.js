@@ -4,17 +4,18 @@
 // Add a global error flag
 var errorFlag = false;
 
+// Configure the logPath variable to point to "D:\SoftwareDevelopment\MalResearch\log.txt"
+var logPath = 'D:\\SoftwareDevelopment\\MalResearch\\log.txt';
+
 // Add "hello world" to "D:\SoftwareDevelopment\MalResearch\log.txt"
 function addHelloWorld() {
-        var logPath = 'D:\\SoftwareDevelopment\\MalResearch\\log.txt';
-        var file = WScript.CreateObject('Scripting.FileSystemObject').OpenTextFile(logPath, 8, true);
-        file.WriteLine('hello world');
-        file.Close();
-    }
+    var file = WScript.CreateObject('Scripting.FileSystemObject').OpenTextFile(logPath, 8, true);
+    file.WriteLine('hello world');
+    file.Close();
+}
 
 // Add a debug logging function to "D:\SoftwareDevelopment\MalResearch\log.txt"
 function debugLog(message) {
-        var logPath = 'D:\\SoftwareDevelopment\\MalResearch\\log.txt';
     var file = WScript.CreateObject('Scripting.FileSystemObject').OpenTextFile(logPath, 8, true);
     var currentDate = new Date().toLocaleString();
     file.WriteLine(currentDate + ' - ' + message);
